@@ -68,8 +68,7 @@ correlation.point.R
 correlation.point.log.R
 
 # correlation.R
-
-![G334E1L1_UMI3_Abundance_Accuracy.png](Abundance_Accuracy.png)
+![Abundance_Accuracy.png](G334E1L1_UMI3_Abundance_Accuracy.png)
 
 # new correlation plot:
 # suitable for PPT, log scale, scientific axis lable.
