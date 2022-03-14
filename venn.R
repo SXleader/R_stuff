@@ -1,5 +1,6 @@
 library(VennDiagram)
 library(RColorBrewer)
+library(gplots)
 args=commandArgs(T)
 # setwd("/cygene2/work/P0000-Blackbird/2103-BL001/BL001004/BL14_WES_PTTU_CL1/BL14_TU_CL1-P4-gDNA_hg38")
 # args = c("BL14-TU.gene.id", "TU_CL1.gene.id", "PT_CL1.gene.id")
@@ -48,14 +49,16 @@ if ( args_length == 2 ){
 	file_name1 = unlist(strsplit(basename(args[1]),"\\."))[1]
 	file_name2 = unlist(strsplit(basename(args[2]),"\\."))[1]
 	file_name3 = unlist(strsplit(basename(args[3]),"\\."))[1]
-	
+	png("venn_test.png", bg = 'transparent')
 	venn.diagram(list(A=A,B=B,C=C),
 	             resolution = 300, imagetype = "png",
+	             units = "px", bg = "transparent",
 	             disable.logging = TRUE,
 	             # for circle:
-	             col = RColorBrewer::brewer.pal(7, "Dark2")[1:3],
+	             # col = RColorBrewer::brewer.pal(7, "Dark2")[1:3],
+	             col = "transparent",
 	             # fill = RColorBrewer::brewer.pal(7,"Dark2")[1:3],
-	             
+	             fill = "transparent",
 	             label.col=c("black"), # label 颜色，默认黑色
 	             cex = 2, # label 字体大小
 	             
@@ -69,11 +72,11 @@ if ( args_length == 2 ){
 	             alpha = 1,# 透明度
 	             
 	             # for main title:
-	             main="", main.cex = 4,main.col = "blue", main.fontface=2,
-	             sub.fontfamily = "serif", main.just = 0,
+	             # main="", main.cex = 4,main.col = "blue", main.fontface=2,
+	             # sub.fontfamily = "serif", main.just = 0,
 	             
 	             # for subtitle:
-	             sub = "", sub.cex = 2, sub.col = "red", sub.fontface = 8,
+	             # sub = "", sub.cex = 2, sub.col = "red", sub.fontface = 8,
 	             filename = "VennDiagram.triple.png")
 	print("Output graph : VennDiagram.triple.png")
 
